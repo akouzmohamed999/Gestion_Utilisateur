@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <div class="container" >
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-2" style="margin-top: 50px">
+                <div class="panel panel-info">
+
+                    <div class="panel panel-heading"><h3>Bienvenue!</h3></div>
+                    <div class="panel panel-body">
+                        <h2>Bonjour {{ user }} !!</h2>
+                        <a class="pull-left btn btn-info" href={{ path("update") }} >Modifier ce compte</a>
+                        <a class="pull-right btn btn-danger" href={{ path("delete") }} >Supprimer ce compte</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

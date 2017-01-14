@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <div class="container" >
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-2" style="margin-top: 50px">
+                <div class="panel panel-primary">
+                        <div class="panel panel-heading"><h3>Créer votre utilisateur</h3></div>
+                            <div class="panel panel-body">
+                                {% if error %}
+                                    <div class="alert-danger">{{ error }}</div>
+                                {% endif %}
+                                {{ form_start(form) }}
+                                {{ form_label(form._username) }}
+                                {{ form_widget(form._username) }}
+                                {{ form_label(form._password) }}
+                                {{ form_widget(form._password) }}
+                                {{ form_label(form._password_repeat) }}
+                                {{ form_widget(form._password_repeat) }}
+                                <div><button type="submit" class="btn btn-primary pull-right">Créer utilisateur</button></div>
+                                {{ form_end(form)}}
+                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

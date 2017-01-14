@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <div class="container" >
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-2" style="margin-top: 50px">
+                <div class="panel panel-primary">
+                        <div class="panel panel-heading"><h3>Modifier votre Compte</h3></div>
+                            <div class="panel panel-body">
+                                {% if error %}
+                                    <div class="alert-danger">{{ error }}</div>
+                                {% endif %}
+                                {{ form_start(form) }}
+                                {{ form_row(form._username) }}
+                                {{ form_row(form._password) }}
+                                {{ form_row(form._password_repeat) }}
+                                <button type="submit" class="btn btn-primary pull-right">modifier Compte</button>
+                                {{ form_end(form)}}
+                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

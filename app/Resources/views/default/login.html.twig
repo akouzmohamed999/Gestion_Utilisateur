@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <div class="container" >
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-2" style="margin-top: 50px">
+                <div class="panel panel-info">
+
+                    <div class="panel panel-heading"><h3>Login!</h3></div>
+                    <div class="panel panel-body">
+                        {% if error %}
+                            <div class="alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
+                        {{ form_start(form) }}
+
+                        {{ form_label(form._username) }}
+                        {{ form_widget(form._username) }}
+                        {{ form_label(form._password) }}
+                        {{ form_widget(form._password) }}
+                        <button type="submit" class="btn btn-primary">Login</button>
+                        {{ form_end(form)}}
+                        <a href="{{ path('register') }}" class="btn btn-default pull-default pull-right" >Créer un utilisateur</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
